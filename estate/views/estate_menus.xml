@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Acciones ventana -->
+
+    <!-- Anuncios -->
+
+
+    <record model="ir.actions.act_window" id="action_tree">
+        <field name="name">Propiedades</field>
+        <field name="res_model">estate.propiedad</field>
+        <field name="view_mode">tree,form,search,kanban</field>
+        <field name="context">{'search_default_available': True, 'search_default_current': True} </field>
+    </record>
+
+    <!-- Ajustes -->
+
+    <!-- Tipos -->
+
+    <record model="ir.actions.act_window" id="action_type_view_form">
+        <field name="name">Tipos</field>
+        <field name="res_model">estate.property.type</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+    <!-- Etiquetas -->
+
+    <record model="ir.actions.act_window" id="action_tag_view_form">
+        <field name="name">Tags</field>
+        <field name="res_model">estate.property.tag</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+
+    <!-- Items del menu -->
+
+    <!-- Anuncios -->
+
+    <menuitem id="menu_principal" name="Inmobiliaria"></menuitem>
+    <menuitem id="menu_secundario_advertisement" name="Anuncios" parent="menu_principal"></menuitem>
+    <menuitem id="menu_terciario_tree" name="Propiedades" parent="menu_secundario_advertisement"
+        action="action_tree"></menuitem>
+
+
+    <!-- Ajustes -->
+
+    <menuitem id="menu_secundario_ajustes" name="Ajustes" parent="menu_principal"></menuitem>
+    <menuitem id="menu_terciario_tipos" name="Tipos" parent="menu_secundario_ajustes"
+        action="action_type_view_form"></menuitem>
+    <menuitem id="menu_terciario_tags" name="Etiquetas" parent="menu_secundario_ajustes"
+        action="action_tag_view_form"></menuitem>
+
+
+</odoo>
